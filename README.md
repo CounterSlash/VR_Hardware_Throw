@@ -7,7 +7,7 @@
   - Git repo
 
 ### Week 4
-  - Completed the State of the Art document
+  - Completed the State of the Art document [here](https://docs.google.com/document/d/1mVLnSxsSk_ru1T5mjSqh1cbpEWVmmF8Ca5pl74K3cPo/edit?usp=sharing)
   - (pending) Created base unity project
 
 ## Members
