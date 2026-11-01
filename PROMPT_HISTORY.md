@@ -32,5 +32,7 @@ x. PROMPT SUMMARY HERE
 </details>
 
 <details>
+<details>
+    <summary> Response </summary>
     [here](Docs/Scatch.jpeg) 
 </details>
