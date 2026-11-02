@@ -10,6 +10,12 @@
   - Completed the State of the Art document [here](https://docs.google.com/document/d/1mVLnSxsSk_ru1T5mjSqh1cbpEWVmmF8Ca5pl74K3cPo/edit?usp=sharing)
   - (pending) Created base unity project
 
+### Week 5
+  - Completed the Modules document [here](https://docs.google.com/document/d/149EuGA0p9nQfXa1prsjf44wpgoZ682X7eSgffY1dW-k/edit?usp=sharing)
+  - Pending:
+    - Trying a test environment on the Quest
+    - Upload the unity project to github
+
 ## Members
   - Cosulean Dima
   - Dobos Eugeniu

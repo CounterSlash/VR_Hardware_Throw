@@ -1,0 +1,2 @@
+- When the chair is thrown out of the main area, -20% multiplier to all custom builds because you have to build them while standing (tired)
+- Throwing an object may create a comment bubble (for example: throwing a server above 1000 points (example value) will create the comment "Great!")
