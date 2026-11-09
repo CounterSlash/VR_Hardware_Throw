@@ -758,7 +758,7 @@ Transform:
   m_GameObject: {fileID: 46782851}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.8130001, y: 0.58551, z: 0.35830998}
+  m_LocalPosition: {x: -0.673, y: 0.58551, z: 0.35830998}
   m_LocalScale: {x: 0.4, y: 0.09, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -846,7 +846,7 @@ MonoBehaviour:
   m_SnapToColliderVolume: 1
   m_ReinitializeDynamicAttachEverySingleGrab: 1
   m_AttachEaseInTime: 0.15
-  m_MovementType: 2
+  m_MovementType: 0
   m_PredictedVisualsTransform: {fileID: 0}
   m_VelocityDamping: 1
   m_VelocityScale: 1
@@ -920,7 +920,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 2
 --- !u!65 &46782855
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1742,7 +1742,7 @@ Transform:
   m_GameObject: {fileID: 340422947}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.8130001, y: -0.08448999, z: 0.35830998}
+  m_LocalPosition: {x: -0.66200006, y: -0.08448999, z: 0.35830998}
   m_LocalScale: {x: 0.4, y: 0.09, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1830,7 +1830,7 @@ MonoBehaviour:
   m_SnapToColliderVolume: 1
   m_ReinitializeDynamicAttachEverySingleGrab: 1
   m_AttachEaseInTime: 0.15
-  m_MovementType: 2
+  m_MovementType: 0
   m_PredictedVisualsTransform: {fileID: 0}
   m_VelocityDamping: 1
   m_VelocityScale: 1
@@ -1904,7 +1904,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 2
 --- !u!65 &340422951
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2318,7 +2318,7 @@ Transform:
   m_GameObject: {fileID: 687105610}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.8130001, y: 0.26051, z: 0.35830998}
+  m_LocalPosition: {x: -0.66200006, y: 0.26051, z: 0.35830998}
   m_LocalScale: {x: 0.4, y: 0.09, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2406,7 +2406,7 @@ MonoBehaviour:
   m_SnapToColliderVolume: 1
   m_ReinitializeDynamicAttachEverySingleGrab: 1
   m_AttachEaseInTime: 0.15
-  m_MovementType: 2
+  m_MovementType: 0
   m_PredictedVisualsTransform: {fileID: 0}
   m_VelocityDamping: 1
   m_VelocityScale: 1
@@ -2480,7 +2480,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 2
 --- !u!65 &687105614
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2662,7 +2662,7 @@ MonoBehaviour:
   m_SnapToColliderVolume: 1
   m_ReinitializeDynamicAttachEverySingleGrab: 1
   m_AttachEaseInTime: 0.15
-  m_MovementType: 2
+  m_MovementType: 0
   m_PredictedVisualsTransform: {fileID: 0}
   m_VelocityDamping: 1
   m_VelocityScale: 1
@@ -2736,7 +2736,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 2
 --- !u!65 &775248174
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2824,7 +2824,7 @@ Transform:
   m_GameObject: {fileID: 775248171}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.42499995, y: 0.61750996, z: 0.35830998}
+  m_LocalPosition: {x: 0.065, y: 0.577, z: 0.35830998}
   m_LocalScale: {x: 0.4, y: 0.09, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3279,7 +3279,7 @@ Transform:
   m_GameObject: {fileID: 1039006092}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.8130001, y: -0.434, z: 0.35830998}
+  m_LocalPosition: {x: -0.66899997, y: -0.434, z: 0.356}
   m_LocalScale: {x: 0.4, y: 0.09, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3367,7 +3367,7 @@ MonoBehaviour:
   m_SnapToColliderVolume: 1
   m_ReinitializeDynamicAttachEverySingleGrab: 1
   m_AttachEaseInTime: 0.15
-  m_MovementType: 2
+  m_MovementType: 0
   m_PredictedVisualsTransform: {fileID: 0}
   m_VelocityDamping: 1
   m_VelocityScale: 1
@@ -3441,7 +3441,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 2
 --- !u!65 &1039006096
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4120,7 +4120,7 @@ Transform:
   m_GameObject: {fileID: 1225421004}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.8130001, y: -0.269, z: 0.35830998}
+  m_LocalPosition: {x: -0.662, y: -0.269, z: 0.35830998}
   m_LocalScale: {x: 0.4, y: 0.09, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4208,7 +4208,7 @@ MonoBehaviour:
   m_SnapToColliderVolume: 1
   m_ReinitializeDynamicAttachEverySingleGrab: 1
   m_AttachEaseInTime: 0.15
-  m_MovementType: 2
+  m_MovementType: 0
   m_PredictedVisualsTransform: {fileID: 0}
   m_VelocityDamping: 1
   m_VelocityScale: 1
@@ -4282,7 +4282,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 2
 --- !u!65 &1225421008
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4631,7 +4631,7 @@ Transform:
   m_GameObject: {fileID: 1476636257}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.8130001, y: 0.092510015, z: 0.35830998}
+  m_LocalPosition: {x: -0.66200006, y: 0.092510015, z: 0.35830998}
   m_LocalScale: {x: 0.4, y: 0.09, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4719,7 +4719,7 @@ MonoBehaviour:
   m_SnapToColliderVolume: 1
   m_ReinitializeDynamicAttachEverySingleGrab: 1
   m_AttachEaseInTime: 0.15
-  m_MovementType: 2
+  m_MovementType: 0
   m_PredictedVisualsTransform: {fileID: 0}
   m_VelocityDamping: 1
   m_VelocityScale: 1
@@ -4793,7 +4793,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 2
 --- !u!65 &1476636261
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5883,7 +5883,7 @@ Transform:
   m_GameObject: {fileID: 1895467421}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.8130001, y: 0.42651, z: 0.35830998}
+  m_LocalPosition: {x: -0.66200006, y: 0.42651, z: 0.35830998}
   m_LocalScale: {x: 0.4, y: 0.09, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5971,7 +5971,7 @@ MonoBehaviour:
   m_SnapToColliderVolume: 1
   m_ReinitializeDynamicAttachEverySingleGrab: 1
   m_AttachEaseInTime: 0.15
-  m_MovementType: 2
+  m_MovementType: 0
   m_PredictedVisualsTransform: {fileID: 0}
   m_VelocityDamping: 1
   m_VelocityScale: 1
@@ -6045,7 +6045,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 2
 --- !u!65 &1895467425
 BoxCollider:
   m_ObjectHideFlags: 0
