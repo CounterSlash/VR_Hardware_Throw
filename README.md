@@ -18,7 +18,7 @@
 ### Week 6
   - Make an initial scene with test objects to try and figure out throwing
   - Started work on the build-it-yourself server
-  
+  - Small [video](https://pixeldrain.com/u/vCjAu43u) with the progress
 
 ## Members
   - Cosulean Dima
