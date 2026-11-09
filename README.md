@@ -12,9 +12,13 @@
 
 ### Week 5
   - Completed the Modules document [here](https://docs.google.com/document/d/149EuGA0p9nQfXa1prsjf44wpgoZ682X7eSgffY1dW-k/edit?usp=sharing)
-  - Pending:
-    - Trying a test environment on the Quest
-    - Upload the unity project to github
+  - Trying a test environment on the Quest
+  - Upload the unity project to github
+
+### Week 6
+  - Make an initial scene with test objects to try and figure out throwing
+  - Started work on the build-it-yourself server
+  
 
 ## Members
   - Cosulean Dima
