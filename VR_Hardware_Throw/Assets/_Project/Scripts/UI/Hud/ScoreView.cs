@@ -18,6 +18,14 @@ namespace VRThrow.UI.Hud
         // intre obiecte nu e garantata, iar Instance poate fi inca null in OnEnable.
         private void OnEnable()
         {
+            if (scoreManager == null || totalText == null || lastThrowText == null)
+            {
+                Debug.LogError("ScoreView: completeaza ScoreManager, TotalText si LastThrowText in Inspector.", this);
+                enabled = false;
+                return;
+            }
+        
+
             scoreManager.ThrowScored += OnThrowScored;
             scoreManager.ScoreReset += OnScoreReset;
             OnScoreReset();
@@ -25,6 +33,12 @@ namespace VRThrow.UI.Hud
 
         private void OnDisable()
         {
+            // Daca OnEnable a iesit devreme, nu avem la ce sa ne dezabonam.
+            if (scoreManager == null)
+            {
+                return;
+            }
+
             scoreManager.ThrowScored -= OnThrowScored;
             scoreManager.ScoreReset -= OnScoreReset;
         }

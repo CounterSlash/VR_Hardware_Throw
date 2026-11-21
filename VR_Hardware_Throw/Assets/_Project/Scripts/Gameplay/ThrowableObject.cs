@@ -36,7 +36,7 @@ namespace VRThrow.Gameplay.Throwing
             if (hardwareData == null)
             {
                 // Nu oprim jocul pentru o data lipsa, dar semnalam clar problema in editor.
-                Debug.LogWarning($"{name}: HardwareData lipseste, se foloseste multiplier x1.", this);
+                //Debug.LogWarning($"{name}: HardwareData lipseste, se foloseste multiplier x1.", this);
                 return;
             }
 
@@ -65,6 +65,9 @@ namespace VRThrow.Gameplay.Throwing
 
         private void OnReleased(SelectExitEventArgs args)
         {
+
+            //Debug.Log($"[Throw] released. stillSelected={grabInteractable.isSelected}, canceled={args.isCanceled}", this);
+
             // Cu doua maini, selectExited se declanseaza si cand o singura mana da drumul.
             // Obiectul e "aruncat" abia cand nu il mai tine nimeni.
             if (grabInteractable.isSelected)
@@ -80,10 +83,14 @@ namespace VRThrow.Gameplay.Throwing
 
             isInFlight = true;
             releaseTime = Time.time;
+
+            //Debug.Log("[Throw] in flight", this);
         }
 
         private void OnCollisionEnter(Collision collision)
         {
+            //Debug.Log($"[Throw] hit {collision.gameObject.name} (layer {LayerMask.LayerToName(collision.gameObject.layer)}), inFlight={isInFlight}, scoringSurface={IsScoringSurface(collision.gameObject)}", this);
+
             if (!isInFlight || !IsScoringSurface(collision.gameObject))
             {
                 return;
@@ -92,6 +99,10 @@ namespace VRThrow.Gameplay.Throwing
             // Primul impact cu suprafata de scor inchide aruncarea, indiferent daca e valida.
             // Un singur punct de iesire evita dubla contorizare la ricosee.
             isInFlight = false;
+
+            //float airTime = Time.time - releaseTime;
+            //Debug.Log($"[Throw] airTime={airTime:F2}s, manager={(ScoreManager.Instance != null)}", this);
+
 
             if (Time.time - releaseTime < minAirTime || ScoreManager.Instance == null)
             {
