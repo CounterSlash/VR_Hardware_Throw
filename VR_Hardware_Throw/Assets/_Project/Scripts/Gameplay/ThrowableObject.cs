@@ -1,8 +1,8 @@
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.XR.Interaction.Toolkit.Interactables; // XRI 3.x. Pe XRI 2.x sterge aceasta linie.
-using VRThrow.Gameplay.Hardware;
 using VRThrow.Gameplay.Scoring;
+using VRThrow.Gameplay.ServerClasses;
 
 namespace VRThrow.Gameplay.Throwing
 {
@@ -13,8 +13,7 @@ namespace VRThrow.Gameplay.Throwing
     [RequireComponent(typeof(XRGrabInteractable), typeof(Rigidbody))]
     public class ThrowableObject : MonoBehaviour
     {
-        [Header("Date")]
-        [SerializeField] private HardwareData hardwareData;
+        private ServerBase server;
 
         [Header("Detectie aterizare")]
         [Tooltip("Layer-ele pe care aterizarea conteaza (ex. 'ScoringSurface'). Layer in loc de tag: nu depinde de un string care poate fi scris gresit.")]
@@ -27,21 +26,20 @@ namespace VRThrow.Gameplay.Throwing
         private bool isInFlight;
         private float releaseTime;
 
-        private float Multiplier => hardwareData != null ? hardwareData.ScoreMultiplier : 1f;
+        private float Multiplier => server != null ? server.ScoreMultiplier : 1f;
 
         private void Awake()
         {
             grabInteractable = GetComponent<XRGrabInteractable>();
+            server = GetComponent<ServerBase>();
 
-            if (hardwareData == null)
+            if (server == null || server.TotalMassKg <= 0f)
             {
-                // Nu oprim jocul pentru o data lipsa, dar semnalam clar problema in editor.
-                //Debug.LogWarning($"{name}: HardwareData lipseste, se foloseste multiplier x1.", this);
                 return;
             }
 
-            // Masa vine din date, ca designerul sa nu trebuiasca sa deschida fiecare prefab.
-            GetComponent<Rigidbody>().mass = hardwareData.MassKg;
+
+            GetComponent<Rigidbody>().mass = server.TotalMassKg;
         }
 
         private void OnEnable()
