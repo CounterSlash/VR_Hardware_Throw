@@ -7006,7 +7006,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd95b64309b143a2846fcc8a253a94b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::VRThrow.Gameplay.ServerClasses.CustomBuildServer
-  hardwareComponents: []
+  maxCPUComponents: 1
+  maxRAMComponents: 2
+  maxGPUComponents: 1
+  maxStorageComponents: 1
+  maxExtraComponents: 1
+  CPUComponents: []
+  RAMComponents: []
+  GPUComponents: []
+  StorageComponents: []
+  ExtraComponents: []
 --- !u!43 &1192268650
 Mesh:
   m_ObjectHideFlags: 0

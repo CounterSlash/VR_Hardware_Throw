@@ -6,16 +6,16 @@ namespace VRThrow.Gameplay.ServerClasses
 {
     public abstract class ServerBase : MonoBehaviour
     {
-        protected abstract List<HardwareData> HardwareComponents { get; }
+        protected abstract IEnumerable<HardwareData> HardwareComponents { get; }
+
+        protected abstract bool TryStoreHardwareData(HardwareData hardwareData);
 
         public bool TryAddHardwareData(HardwareData hardwareData)
         {
-            if (hardwareData == null || HardwareComponents == null)
+            if (hardwareData == null || !TryStoreHardwareData(hardwareData))
             {
                 return false;
             }
-
-            HardwareComponents.Add(hardwareData);
 
             Rigidbody body = GetComponent<Rigidbody>();
             if (body != null && TotalMassKg > 0f)
@@ -31,7 +31,7 @@ namespace VRThrow.Gameplay.ServerClasses
             get
             {
                 float multiplier = 1f;
-                List<HardwareData> components = HardwareComponents;
+                IEnumerable<HardwareData> components = HardwareComponents;
 
                 if (components == null)
                 {
@@ -55,7 +55,7 @@ namespace VRThrow.Gameplay.ServerClasses
             get
             {
                 float totalMassKg = 0f;
-                List<HardwareData> components = HardwareComponents;
+                IEnumerable<HardwareData> components = HardwareComponents;
 
                 if (components == null)
                 {

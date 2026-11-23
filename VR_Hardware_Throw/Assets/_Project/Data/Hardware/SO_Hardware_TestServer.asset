@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: SO_Hardware_TestServer
   m_EditorClassIdentifier: Assembly-CSharp::VRThrow.Gameplay.Hardware.HardwareData
   displayName: Hardware Test
+  hardwareType: 5
   scoreMultiplier: 1
   massKg: 5

@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: RAM-16G_5200_DDR5
   m_EditorClassIdentifier: Assembly-CSharp::VRThrow.Gameplay.Hardware.HardwareData
   displayName: Corsair 8G DDR5 5200MHz
+  hardwareType: 2
   scoreMultiplier: 1.4
   massKg: 0.1
