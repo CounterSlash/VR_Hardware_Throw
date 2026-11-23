@@ -6976,8 +6976,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.4000004, y: 0.5000006, z: 0.00455819}
-  m_Center: {x: 0.000000014901161, y: -0.00000023841858, z: -0.04272093}
+  m_Size: {x: 0.4000004, y: 0.5000006, z: 0.006593688}
+  m_Center: {x: 0.000000014901161, y: -0.00000023841858, z: -0.04170318}
 --- !u!114 &1187409757
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11848,7 +11848,7 @@ GameObject:
   - component: {fileID: 1989543256}
   - component: {fileID: 1989543255}
   m_Layer: 0
-  m_Name: Plane
+  m_Name: Advice Poster
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11863,8 +11863,8 @@ Transform:
   m_GameObject: {fileID: 1989543253}
   serializedVersion: 2
   m_LocalRotation: {x: 0.70710677, y: 0, z: 0, w: 0.70710677}
-  m_LocalPosition: {x: -1.0494707, y: 1.576, z: -1.596}
-  m_LocalScale: {x: 0.09, y: 0.09, z: 0.09}
+  m_LocalPosition: {x: -1.986, y: 0.271, z: -1.598}
+  m_LocalScale: {x: 0.04, y: 0.04, z: 0.04}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1796843004}
