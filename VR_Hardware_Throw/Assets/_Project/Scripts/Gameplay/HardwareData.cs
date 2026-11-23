@@ -1,4 +1,5 @@
 using UnityEngine;
+using _Project.Scripts.Gameplay.HardwareTypes;
 
 namespace VRThrow.Gameplay.Hardware
 {
@@ -13,6 +14,8 @@ namespace VRThrow.Gameplay.Hardware
     {
         [SerializeField] private string displayName = "Hardware";
 
+        [SerializeField] private HardwareTypes hardwareType;
+
         [Tooltip("Pondere de scor: scorul aruncarii = distanta * aceasta valoare.")]
         [SerializeField, Min(0.1f)] private float scoreMultiplier = 1f;
 
@@ -22,6 +25,7 @@ namespace VRThrow.Gameplay.Hardware
         // Expunem doar getter-e: datele sunt read-only la runtime, ca sa nu
         // modificam din greseala un asset partajat intre toate instantele.
         public string DisplayName => displayName;
+        public HardwareTypes HardwareType => hardwareType;
         public float ScoreMultiplier => scoreMultiplier;
         public float MassKg => massKg;
     }
