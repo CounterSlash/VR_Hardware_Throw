@@ -141,13 +141,21 @@ namespace VRThrow.Gameplay.ServerClasses
                 Vector3 worldPosition = transform.TransformPoint(positions[i].LocalPosition);
                 Quaternion worldRotation = transform.rotation * positions[i].LocalRotation;
                 Gizmos.DrawWireSphere(worldPosition, 0.08f);
-                Gizmos.DrawRay(worldPosition, worldRotation * Vector3.forward * 0.2f);
+                DrawRotationAxis(worldPosition, worldRotation, Vector3.right, Color.red);
+                DrawRotationAxis(worldPosition, worldRotation, Vector3.up, Color.green);
+                DrawRotationAxis(worldPosition, worldRotation, Vector3.forward, Color.blue);
 
 #if UNITY_EDITOR
                 bool occupied = components != null && i < components.Count && components[i] != null;
                 Handles.Label(worldPosition, $"{componentType} [{i}] {(occupied ? "Occupied" : "Available")}");
 #endif
             }
+        }
+
+        private static void DrawRotationAxis(Vector3 origin, Quaternion rotation, Vector3 axis, Color color)
+        {
+            Gizmos.color = color;
+            Gizmos.DrawLine(origin, origin + rotation * axis * 0.25f);
         }
 
         private static bool TryAddToComponents(List<HardwareData> components, List<ComponentPosition> positions,
