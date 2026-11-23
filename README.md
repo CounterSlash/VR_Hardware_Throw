@@ -20,6 +20,15 @@
   - Started work on the build-it-yourself server
   - Small [video](https://pixeldrain.com/u/vCjAu43u) with the progress
 
+### Week 7 & 8
+  - ~~Busy with midterms~~
+  - Made the playground larger
+  - Added scoring logic
+    - The scoring code takes into account attached components and distance
+  - Added custom server assembly
+    - Custom servers are scored based on their components
+    - Not final, but the base classes and functionality is there
+
 ## Members
   - Cosulean Dima
   - Dobos Eugeniu
