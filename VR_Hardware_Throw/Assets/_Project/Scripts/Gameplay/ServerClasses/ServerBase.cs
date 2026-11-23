@@ -8,11 +8,14 @@ namespace VRThrow.Gameplay.ServerClasses
     {
         protected abstract IEnumerable<HardwareData> HardwareComponents { get; }
 
-        protected abstract bool TryStoreHardwareData(HardwareData hardwareData);
+        protected abstract bool TryStoreHardwareData(HardwareData hardwareData, out Vector3 localPosition,
+            out Quaternion localRotation);
 
-        public bool TryAddHardwareData(HardwareData hardwareData)
+        public bool TryAddHardwareData(HardwareData hardwareData, out Vector3 localPosition, out Quaternion localRotation)
         {
-            if (hardwareData == null || !TryStoreHardwareData(hardwareData))
+            localPosition = Vector3.zero;
+            localRotation = Quaternion.identity;
+            if (hardwareData == null || !TryStoreHardwareData(hardwareData, out localPosition, out localRotation))
             {
                 return false;
             }

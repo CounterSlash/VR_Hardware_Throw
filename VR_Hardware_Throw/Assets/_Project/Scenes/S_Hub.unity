@@ -7016,6 +7016,23 @@ MonoBehaviour:
   GPUComponents: []
   StorageComponents: []
   ExtraComponents: []
+  CPUComponentPositions:
+  - localPosition: {x: 0, y: 0, z: 0}
+    localEulerAngles: {x: 0, y: 0, z: 0}
+  RAMComponentPositions:
+  - localPosition: {x: 0.05, y: 0.15, z: 0.01}
+    localEulerAngles: {x: -90, y: 180, z: 0}
+  - localPosition: {x: 0.05, y: 0.1, z: 0.01}
+    localEulerAngles: {x: -90, y: 180, z: 0}
+  GPUComponentPositions:
+  - localPosition: {x: 0, y: 0, z: 0}
+    localEulerAngles: {x: 0, y: 0, z: 0}
+  StorageComponentPositions:
+  - localPosition: {x: 0, y: 0, z: 0}
+    localEulerAngles: {x: 0, y: 0, z: 0}
+  ExtraComponentPositions:
+  - localPosition: {x: 0, y: 0, z: 0}
+    localEulerAngles: {x: 0, y: 0, z: 0}
 --- !u!43 &1192268650
 Mesh:
   m_ObjectHideFlags: 0

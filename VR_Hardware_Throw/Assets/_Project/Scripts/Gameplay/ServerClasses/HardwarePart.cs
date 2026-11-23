@@ -29,12 +29,14 @@ namespace VRThrow.Gameplay.ServerClasses
 
             Rigidbody body = GetComponentInParent<Rigidbody>();
             ThrowableObject throwable = GetComponentInParent<ThrowableObject>();
-            if (!server.TryAddHardwareData(hardwareData))
+            if (!server.TryAddHardwareData(hardwareData, out Vector3 localPosition, out Quaternion localRotation))
             {
                 return false;
             }
 
             transform.SetParent(server.transform, true);
+            transform.localPosition = localPosition;
+            transform.localRotation = localRotation;
 
             if (body != null && transform == body.transform)
             {
