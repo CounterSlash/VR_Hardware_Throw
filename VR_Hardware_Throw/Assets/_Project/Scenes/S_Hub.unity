@@ -7009,7 +7009,7 @@ MonoBehaviour:
   maxCPUComponents: 1
   maxRAMComponents: 2
   maxGPUComponents: 1
-  maxStorageComponents: 1
+  maxStorageComponents: 4
   maxExtraComponents: 1
   CPUComponents: []
   RAMComponents: []
@@ -7020,16 +7020,22 @@ MonoBehaviour:
   - localPosition: {x: 0, y: 0, z: 0}
     localEulerAngles: {x: 0, y: 0, z: 0}
   RAMComponentPositions:
-  - localPosition: {x: 0.05, y: 0.15, z: 0.01}
+  - localPosition: {x: 0.05, y: 0.15, z: -0.02}
     localEulerAngles: {x: -90, y: 180, z: 0}
-  - localPosition: {x: 0.1, y: 0.15, z: 0.01}
+  - localPosition: {x: 0.1, y: 0.15, z: -0.02}
     localEulerAngles: {x: -90, y: 180, z: 0}
   GPUComponentPositions:
   - localPosition: {x: 0, y: 0, z: 0}
     localEulerAngles: {x: 0, y: 0, z: 0}
   StorageComponentPositions:
-  - localPosition: {x: 0, y: 0, z: 0}
-    localEulerAngles: {x: 0, y: 0, z: 0}
+  - localPosition: {x: 0.1, y: -0.175, z: -0.02}
+    localEulerAngles: {x: 0, y: 0, z: 180}
+  - localPosition: {x: 0.05, y: -0.175, z: -0.02}
+    localEulerAngles: {x: 0, y: 0, z: 180}
+  - localPosition: {x: 0, y: -0.175, z: -0.02}
+    localEulerAngles: {x: 0, y: 0, z: 180}
+  - localPosition: {x: -0.05, y: -0.175, z: -0.02}
+    localEulerAngles: {x: 0, y: 0, z: 180}
   ExtraComponentPositions:
   - localPosition: {x: 0, y: 0, z: 0}
     localEulerAngles: {x: 0, y: 0, z: 0}
