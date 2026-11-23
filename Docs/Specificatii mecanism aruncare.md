@@ -30,3 +30,11 @@
     ThrowableObject
         Hardware Data cu asset-ul
         Scoring Surfaces cu layerul ScoringSurface (aici imi exploda mie)
+
+
+## La ScoreModifier: 
+putem adauga o diferinta de puncte
+putem adauga o diferenta de Multiplier
+putem cere ca obiectul sa treaca dintr-o directieanumita
+putem face ca un obiect(serverul, tinta(targget-poate in viitor niste stele) sa dispara)
+Adaugam asta pe un obiect solid(se loveste) sau tregger(trece prin)

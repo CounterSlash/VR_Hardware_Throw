@@ -3,6 +3,7 @@ using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.XR.Interaction.Toolkit.Interactables; // XRI 3.x. Pe XRI 2.x sterge aceasta linie.
 using VRThrow.Gameplay.Scoring;
 using VRThrow.Gameplay.ServerClasses;
+using System.Collections.Generic;
 
 namespace VRThrow.Gameplay.Throwing
 {
@@ -25,6 +26,11 @@ namespace VRThrow.Gameplay.Throwing
         private XRGrabInteractable grabInteractable;
         private bool isInFlight;
         private float releaseTime;
+
+        // Modificatori acumulati in timpul zborului curent. Se golesc la prindere si la aterizare.
+        private readonly HashSet<UnityEngine.Object> appliedModifierSources = new HashSet<UnityEngine.Object>();
+        private float bonusPoints;
+        private float multiplierBonus;
 
         private float Multiplier => server != null ? server.ScoreMultiplier : 1f;
 
@@ -59,6 +65,7 @@ namespace VRThrow.Gameplay.Throwing
         {
             // Daca jucatorul reia obiectul din aer sau de pe jos, aruncarea anterioara se anuleaza.
             isInFlight = false;
+            ClearModifiers();
         }
 
         private void OnReleased(SelectExitEventArgs args)
@@ -101,6 +108,11 @@ namespace VRThrow.Gameplay.Throwing
             //float airTime = Time.time - releaseTime;
             //Debug.Log($"[Throw] airTime={airTime:F2}s, manager={(ScoreManager.Instance != null)}", this);
 
+            // Preluam modificatorii si golim imediat, ca sa nu ramana agatati pe iesirile timpurii de mai jos.
+            float pointsFromModifiers = bonusPoints;
+            float multiplierFromModifiers = multiplierBonus;
+            ClearModifiers();
+
 
             if (Time.time - releaseTime < minAirTime || ScoreManager.Instance == null)
             {
@@ -110,12 +122,47 @@ namespace VRThrow.Gameplay.Throwing
             // Punctul de contact, nu centrul obiectului: un server mare ar primi
             // altfel distanta masurata de la mijlocul lui, nu de unde atinge pista.
             Vector3 landingPoint = collision.GetContact(0).point;
-            ScoreManager.Instance.RegisterLanding(landingPoint, Multiplier);
+            ScoreManager.Instance.RegisterLanding(
+                landingPoint,
+                Multiplier,
+                pointsFromModifiers,
+                multiplierFromModifiers);
         }
 
         private bool IsScoringSurface(GameObject other)
         {
             return (scoringSurfaces.value & (1 << other.layer)) != 0;
         }
+
+        /// <summary>
+        /// Inregistreaza efectul unui obstacol asupra aruncarii curente.
+        /// Returneaza false daca obiectul nu e in zbor sau sursa a fost deja aplicata
+        /// (evita dubla penalizare cand obiectul ricoseaza intr-o bariera).
+        /// </summary>
+        public bool TryApplyModifier(UnityEngine.Object source, float pointsDelta, float multiplierDelta)
+        {
+            if (!isInFlight)
+            {
+                return false;
+            }
+
+            if (!appliedModifierSources.Add(source))
+            {
+                return false;
+            }
+
+            bonusPoints += pointsDelta;
+            multiplierBonus += multiplierDelta;
+            return true;
+        }
+
+        private void ClearModifiers()
+        {
+            appliedModifierSources.Clear();
+            bonusPoints = 0f;
+            multiplierBonus = 0f;
+        }
     }
+
+    
 }

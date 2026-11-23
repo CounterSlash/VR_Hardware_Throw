@@ -11,15 +11,18 @@ namespace VRThrow.Gameplay.Scoring
         public readonly float Multiplier;
         public readonly float Points;
         public readonly float TotalScore;
+        public readonly float BonusPoints; // puncte aduse de obstacole, util pentru afisare
 
-        public ThrowScoreInfo(float distance, float multiplier, float points, float totalScore)
+        public ThrowScoreInfo(float distance, float multiplier, float points, float totalScore, float bonusPoints = 0f)
         {
             Distance = distance;
             Multiplier = multiplier;
             Points = points;
             TotalScore = totalScore;
+            BonusPoints = bonusPoints;
         }
     }
+
 
     /// <summary>
     /// Tine scorul total al sesiunii. Nu cunoaste UI-ul: publica evenimente,
@@ -49,6 +52,7 @@ namespace VRThrow.Gameplay.Scoring
 
             Instance = this;
         }
+    
 
         private void OnDestroy()
         {
@@ -79,6 +83,29 @@ namespace VRThrow.Gameplay.Scoring
         {
             TotalScore = 0f;
             ScoreReset?.Invoke();
+        }
+
+        [Tooltip("Plafon inferior: barierele nu pot aduce multiplicatorul la zero sau sub zero.")]
+        [SerializeField, Min(0f)] private float minMultiplier = 0.1f;
+        
+        public void RegisterLanding(Vector3 landingPosition, float multiplier, float bonusPoints = 0f, float multiplierBonus = 0f)
+        {
+            if (track == null)
+            {
+                Debug.LogError("ScoreManager: lipseste referinta catre ThrowTrack (StartLine).", this);
+                return;
+            }
+        
+            float distance = track.GetForwardDistance(landingPosition);
+        
+            // Bonusul relativ se aplica peste multiplicatorul serverului: +0.5 inseamna x1.5 din valoarea lui.
+            float totalMultiplier = Mathf.Max(minMultiplier, multiplier * (1f + multiplierBonus));
+        
+            // Scorul unei aruncari nu coboara sub zero, deci TotalScore nu scade niciodata.
+            float points = Mathf.Max(0f, ScoreCalculator.Calculate(distance, totalMultiplier) + bonusPoints);
+            TotalScore += points;
+        
+            ThrowScored?.Invoke(new ThrowScoreInfo(distance, totalMultiplier, points, TotalScore, bonusPoints));
         }
     }
 }
